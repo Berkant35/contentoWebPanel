@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:contento_web_admin_panel/utilities/constant/extension/context_extension.dart';
 import 'package:contento_web_admin_panel/utilities/constant/extension/EdgeExtension.dart';
 
-enum WhichPage { DONEWORKS, WAITINGWORKS, AVAILABLEWORKS }
+enum WhichPage { DONEWORKS, WAITINGWORKS, AVAILABLEWORKS}
 
 class HomePage extends StatefulWidget {
   @override
@@ -177,7 +177,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget getPage(WhichPage value) {
     if (value == WhichPage.AVAILABLEWORKS) {
-      return AvailableWorks();
+      return AvailableWorks(value);
     } else if (value == WhichPage.DONEWORKS) {
       return DoneWorks();
     } else if (value == WhichPage.WAITINGWORKS) {

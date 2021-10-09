@@ -1,3 +1,4 @@
+import 'package:contento_web_admin_panel/ui/upload_product.dart';
 import 'package:flutter/material.dart';
 import 'package:contento_web_admin_panel/utilities/constant/extension/context_extension.dart';
 import 'package:contento_web_admin_panel/utilities/constant/extension/EdgeExtension.dart';
@@ -18,38 +19,44 @@ class AvailableRows extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: MediaQueryExtension(context).lowValue),
+    return GestureDetector(
+      onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=>UploadProduct())),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
         child: Container(
-            height: MediaQueryExtension(context).height / 20,
-            decoration: BoxDecoration(
-                color: getColorFromIslemDurumu(islemDurumu),
-                borderRadius: BorderRadius.all(
-                    Radius.circular(EdgeExtension.lowEdge.edgeValue))),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  islemID,
-                  style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-                Text(musteriID,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                        color: Colors.black, fontWeight: FontWeight.bold)),
-                Text(siparisTarihi,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                        color: Colors.black, fontWeight: FontWeight.bold)),
-                Text(islemDurumu,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                        color: Colors.black, fontWeight: FontWeight.bold)),
-                Text(ilgilenenTasarimci,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
-                        color: Colors.black, fontWeight: FontWeight.bold)),
-              ],
-            )),
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQueryExtension(context).lowValue),
+            child: Container(
+                height: MediaQueryExtension(context).height / 20,
+                decoration: BoxDecoration(
+                    color: getColorFromIslemDurumu(islemDurumu),
+                    borderRadius: BorderRadius.all(
+                        Radius.circular(EdgeExtension.lowEdge.edgeValue))),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      islemID,
+                      style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
+                    Text(musteriID,
+                        style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
+                    Text(siparisTarihi,
+                        style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
+                    Text(islemDurumu,
+                        style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
+                    Text(ilgilenenTasarimci,
+                        style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                            color: Colors.black, fontWeight: FontWeight.bold)),
+                  ],
+                )),
+          ),
+        ),
       ),
     );
   }

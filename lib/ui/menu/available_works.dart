@@ -1,10 +1,13 @@
+import 'package:contento_web_admin_panel/ui/home_page.dart';
 import 'package:contento_web_admin_panel/utilities/MenuWholePart/available_rows.dart';
 import 'package:flutter/material.dart';
 
 import 'package:contento_web_admin_panel/utilities/constant/extension/context_extension.dart';
-import 'package:contento_web_admin_panel/utilities/constant/extension/EdgeExtension.dart';
 class AvailableWorks extends StatefulWidget {
-  const AvailableWorks({Key? key}) : super(key: key);
+  WhichPage whichPage;
+
+
+  AvailableWorks(this.whichPage);
 
   @override
   State<AvailableWorks> createState() => _AvailableWorksState();
